@@ -21,7 +21,7 @@ export default class Booklist extends Component {
     }
     findBooks()
     {
-        axios.get("http://localhost:9191/books")
+        axios.get("https://java-mongodbbook.herokuapp.com/books")
         .then(response=>response.data)
         .then((data)=>{
             this.setState({books:data})
@@ -29,7 +29,7 @@ export default class Booklist extends Component {
         });
     }
     deleteBook = (bookId) => {
-        axios.delete("http://localhost:9191/delete/"+bookId)
+        axios.delete("https://java-mongodbbook.herokuapp.com/delete/"+bookId)
             .then(response=>{
                 if(response.data !=null){
                     this.setState({"show":true})
