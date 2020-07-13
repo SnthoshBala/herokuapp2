@@ -29,7 +29,7 @@ export default class Book extends Component {
             this.findBookById(bookId);
     }}
     findBookById =(bookId)=>{
-        axios.get("http://localhost:9191/bookById/" +bookId)
+        axios.get("https://java-mongodbbook.herokuapp.com/bookById/" +bookId)
         .then(response=>{
             if(response.data !=null){
                 this.setState(
@@ -61,7 +61,7 @@ export default class Book extends Component {
             language: this.state.language
         };
 
-        axios.post("http://localhost:9191/addBook", book)
+        axios.post("https://java-mongodbbook.herokuapp.com/addBook", book)
             .then(response => {
                 if(response.data != null) {
                     this.setState({"show":true,"method":"post"});
@@ -89,7 +89,7 @@ export default class Book extends Component {
             language: this.state.language
         };
 
-        axios.put("http://localhost:9191/update", book)
+        axios.put("https://java-mongodbbook.herokuapp.com/update", book)
             .then(response => {
                 if(response.data != null) {
                     this.setState({"show":true,"method":"put"});
